@@ -15,8 +15,12 @@ const Home = () => {
   return (
     <>
       <Header Color="white" Home={true} />
-      <div className="background">
-        <div className="background-image-section">
+     
+        <div className="background-video-container">
+        <video autoPlay muted playsInline loop className="background-video">
+          <source src={VideoBackground} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
           <div className="content-overlay">
             <p className="heading">KMVPL</p>
             <p className="heading">Raipur - Visakhapatnam</p>
@@ -30,7 +34,7 @@ const Home = () => {
             </NavLink>
           </div>
         </div>
-      </div>
+   
 
       <Container>
         <Row>
@@ -61,7 +65,7 @@ const Home = () => {
               width="100%"
               height="60%"
               alt="Project"
-              style={{ marginTop: "150px" }}
+              style={{ marginTop: "200px" }}
               className="about_image"
             />
           </Col>

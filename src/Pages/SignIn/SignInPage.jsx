@@ -83,26 +83,19 @@ function SignInForm() {
         <Form.Label className="form-label">Username</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
       </Form.Group>
       <Form.Group controlId="formBasicPassword">
-        <Form.Label className="form-label" >Password</Form.Label>
+        <Form.Label className="form-label">Password</Form.Label>
         <Form.Control
           type="password"
-          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </Form.Group>
-      <div className="checkbox-forgot">
-        <Form.Check type="checkbox" label="Remember me" className="form-label" />
-        <div>
-          <a href="#" className="form-label">Forgot Password?</a>
-        </div>
-      </div>
+      <p style={{ fontFamily: "Urbanist" }}>NOTE: This is only for admins</p>
       <Button className="sign_btn" onClick={handleSignIn}>
         Sign In
       </Button>

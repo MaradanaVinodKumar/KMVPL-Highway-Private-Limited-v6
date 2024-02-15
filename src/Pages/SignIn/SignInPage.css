@@ -69,7 +69,9 @@
   gap: 10px;
   border-radius: 60px;
   background: var(--Brand-color, #ea6a06);
-  margin-top: 20px;
+  margin-top: 0px;
+  border: 0px;
+  font-family: Urbanist;
 }
 button {
   background-color: #ea6a09;
@@ -236,12 +238,11 @@ input[type="checkbox"] {
   }
 }
 @media screen and (min-width: 228px) and (max-width: 368px) {
- 
   .image_sign {
     border-radius: 8px;
     width: 90%;
     height: 100%;
-  
+
     margin-top: 5vh;
   }
   input[type="text"],
@@ -263,4 +264,3 @@ input[type="checkbox"] {
     padding: 10px 24px 10px 24px;
   }
 }
-
