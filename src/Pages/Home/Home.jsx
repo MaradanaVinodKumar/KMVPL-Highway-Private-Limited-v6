@@ -58,14 +58,14 @@ const Home = () => {
               Project.
             </p>
           </Col>
-          <Col md={2}></Col>
-          <Col md={5}>
+          <Col md={1}></Col>
+          <Col md={6}>
             <img
               src={about_image}
-              width="100%"
-              height="60%"
+              width= '700px'
+              height= '520px'
               alt="Project"
-              style={{ marginTop: "200px" }}
+         style={{marginTop:"20vh"}}
               className="about_image"
             />
           </Col>

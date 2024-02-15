@@ -95,7 +95,9 @@ function SignInForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
       </Form.Group>
-      <p style={{ fontFamily: "Urbanist" }}>NOTE: This is only for admins</p>
+      <p style={{ fontFamily: "Urbanist", fontWeight: "bolder" }}>
+        NOTE: This is only for admins
+      </p>
       <Button className="sign_btn" onClick={handleSignIn}>
         Sign In
       </Button>

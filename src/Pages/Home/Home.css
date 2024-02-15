@@ -122,8 +122,25 @@
   margin-top: 10vh !important;
   margin-bottom: 5vh !important;
 }
+@media screen and (min-width:'1085px') and (max-width:1388px){
+  .about_image {
 
-@media screen and (min-width: 768px) and (max-width: 1028px) {
+  }
+  .content-overlay {
+    width: 90%; /* Adjust width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+@media screen and (max-width:1780px){
+  .about_image {
+    width: 100%;
+    height: 60%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1085px) {
   .background-video-container {
     height: 100vh; /* Adjust height */
   }
@@ -158,7 +175,7 @@
 
   .about_image {
     width: 100%;
-    height: 80%;
+    height: 50%;
   }
 }
 
@@ -200,8 +217,8 @@
     margin: 2vh;
   }
   .about_image {
-    width: "100%" !important;
-    height: "60%" !important;
+  
+    margin-top: 5rem !important;
   }
 
   .footer {
