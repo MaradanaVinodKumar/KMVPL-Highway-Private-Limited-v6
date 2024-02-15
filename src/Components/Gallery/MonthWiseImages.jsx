@@ -43,12 +43,12 @@ function storeImagesDataInAObject(imageData) {
   imageData.sort((a, b) => {
     var Adate = new Date(a.item._location.path_.slice(13, 25));
     var Bdate = new Date(b.item._location.path_.slice(13, 25));
-    console.log(
-      a.item._location.path_,
-      "\n",
-      a.item._location.path_.slice(13, 25)
-    );
-    console.log("sort :-", Adate.getDate(), Bdate.getDate());
+    // console.log(
+    //   a.item._location.path_,
+    //   "\n",
+    //   a.item._location.path_.slice(13, 25)
+    // );
+    // console.log("sort :-", Adate.getDate(), Bdate.getDate());
 
     if (Adate.getDate() > Bdate.getDate()) {
       return -1;
@@ -58,7 +58,7 @@ function storeImagesDataInAObject(imageData) {
       return 0;
     }
   });
-  console.log("sorted array:-", imageData);
+  // console.log("sorted array:-", imageData);
   return imageData;
 }
 
@@ -103,19 +103,28 @@ function MonthWiseImages({ FormatedDate, EditButton = false }) {
 
   const DeleteImage = (path) => {
     var conf = "do you want to delete!";
-    if (conf) {
+
+    if (window.confirm(conf)) {
       const deleteRef = ref(imageDb, path);
       deleteObject(deleteRef)
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           alert("image deleted!");
+
+
           setReload(true);
           setViewMoreVisiblity(false);
+
+
         })
         .catch((error) => {
           console.log(error);
-          alert("image did not deleted!");
+          alert("image did not deleted! becouse the server is down.");
+
         });
+    }
+    else {
+      setTimeout(() => { setShowModal(false); }, 1)
     }
   };
 
@@ -154,7 +163,7 @@ function MonthWiseImages({ FormatedDate, EditButton = false }) {
     const Path = date.getFullYear() + "/" + monthName[date.getMonth()] + "/";
     listAll(ref(imageDb, Path))
       .then((files) => {
-        console.log(files.items);
+        // console.log(files.items);
         files.items.forEach((item) => {
           converToUrl(item).then((url) => {
             let obj = { url: url, item: item };
@@ -167,15 +176,16 @@ function MonthWiseImages({ FormatedDate, EditButton = false }) {
         console.log(e.message);
       })
       .finally(() => {
-        console.log(arrayOfImagesData.length, arrayOfImagesData);
+        // console.log(arrayOfImagesData.length, arrayOfImagesData);
         setTimeout(() => {
           arrayOfImagesData = storeImagesDataInAObject(arrayOfImagesData);
           setTimeout(() => {
             setImagesFromFireBase([...arrayOfImagesData]);
             storeTempImages(arrayOfImagesData);
             setSelectedImageIndex(null);//if it is removed delete error occured
-            console.log(arrayOfImagesData);
-            console.log();
+            setShowModal(false);
+            // console.log(arrayOfImagesData);
+            // console.log();
             setLoading(true);
           }, 1000);
         }, 1000);
@@ -215,23 +225,24 @@ function MonthWiseImages({ FormatedDate, EditButton = false }) {
           getTempImages.length ? (
             getTempImages.map((imageData, index) => (
               <Col key={v4()} sm={6} md={4} lg={3}>
-                <Row className="imageRow">
+                <Row className="imageRow" onClick={() => handleImageClick(index)}>
                   {" "}
                   <div
                     className="imageCard"
                     style={{ backgroundImage: `url("${imageData.url}")` }}
-                    onClick={() => handleImageClick(index)}
                   >
                     {!editButtonClicked && (
-                      <span
+                      <div
                         className="deleteButton"
                         onClick={() => {
+                          setTimeout(() => { setShowModal(false); }, 100)
                           DeleteImage(imageData.item);
+
                         }}
 
                       >
                         ╳
-                      </span>
+                      </div>
                     )}
                   </div>
                 </Row>
@@ -240,6 +251,7 @@ function MonthWiseImages({ FormatedDate, EditButton = false }) {
           ) : (
             <div className="LoadingBg">
               <img src={emptyGallery} className="empty_image"></img>
+              <div>Images had not uploaded this month</div>
             </div>
           )
         ) : (
@@ -281,13 +293,15 @@ function MonthWiseImages({ FormatedDate, EditButton = false }) {
         <Modal.Footer>
           <button
             onClick={handleModalPrevious}
-            disabled={getImagesFromFireBase.length <= 1}
+            disabled={selectedImageIndex === 0}
+            style={{ opacity: (selectedImageIndex === 0) && 0.2 }}
           >
             &#10094; Previous
           </button>
           <button
             onClick={handleModalNext}
-            disabled={getImagesFromFireBase.length <= 1}
+            disabled={selectedImageIndex === (getImagesFromFireBase.length - 1)}
+            style={{ opacity: (selectedImageIndex === (getImagesFromFireBase.length - 1)) && 0.2 }}
           >
             Next &#10095;
           </button>

@@ -102,8 +102,10 @@ const AdminPage = (props) => {
             });
 
             if (conunt > 95) {
-              setUploadSuccess(true);
+              setUploadSuccess(() => true);
+
               setTimeout(() => {
+                setTimeout(() => { setProgressBarStatus(() => false); }, 2500);//time out for progress bar automatic close
                 setFiles([]);
               }, 100);
             }
@@ -114,10 +116,14 @@ const AdminPage = (props) => {
   };
 
   const deleteFile = (index) => {
+
+
     var arrayFiles = getFiles.filter((value, ind) => index !== ind);
+    // console.log(arrayFiles, index);
     setFiles(arrayFiles);
     if (arrayFiles.length === 0) {
       setSelectedFiles(true);
+      setUploadDate(todayForUpload);
     }
   };
 
@@ -196,7 +202,7 @@ const AdminPage = (props) => {
                       sm={6}
                       md={4}
                       lg={3}
-                      key={image.size}
+                      key={index + "files"}
                       style={{
                         backgroundImage: `url("${URL.createObjectURL(image)}")`,
                       }}
@@ -269,7 +275,7 @@ const AdminPage = (props) => {
                     {Array.from({ length: (selectedYear == year) ? month : 12 }, (_, i) => i + 1).map(
                       (month) => (
 
-                        <Col key={month} xs={12}>
+                        <Col key={month + "month"} xs={12}>
                           <button
                             className={`btn btn-light w-100 mb-2 months_font ${parseInt(selectedMonth) === month ? "MonthsButtonActive" : ""
                               }`}
@@ -286,8 +292,8 @@ const AdminPage = (props) => {
 
                       )
                     )}
-                    <Col key={month} xs={12}></Col>
-                    <Col key={month} xs={12}></Col>
+                    <Col key={"asdf"} xs={12}></Col>
+                    <Col key={"dfasdf"} xs={12}></Col>
                   </Row>
                 </div>
               )}

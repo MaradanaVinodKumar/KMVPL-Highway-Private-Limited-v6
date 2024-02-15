@@ -2,10 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   flex-direction: row;
 }
-
 .signIn_label {
   color: #1a1a1a;
   font-family: Urbanist;
@@ -15,44 +13,24 @@
   line-height: 130%; /* 39px */
   letter-spacing: 0.6px;
 }
-.left-section {
-  flex: 1;
-  padding: 20px;
-  margin-left: -15vh;
-}
-
 .right-section {
   flex: 1;
-  padding: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 20vh;
+  justify-content: flex-end; /* Align to the right */
+  align-items: flex-end; /* Align to the bottom */
+  padding: 0px;
 }
-
 .image_sign {
-  border-radius: 8px;
-  max-width: 784px;
-  height: 704px;
+  border-radius: 80px 0px 0px 0px; /* Border radius to the left side top only */
+  width: 944px;
+  height: 854px;
   flex-shrink: 0;
 }
-
 .signin-form {
   margin-top: 20px;
-  margin-left: -2rem !important;
+  margin-left: 10rem !important;
 }
-
-.header {
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.header h2 {
-  font-size: 24px;
-  color: #333;
-}
-
-.label {
+.form-label {
   color: #1a1a1a;
   font-family: Urbanist;
   font-size: 20px;
@@ -74,23 +52,14 @@
   font-family: Urbanist;
 }
 button {
-  background-color: #ea6a09;
   color: #fff;
-  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #ea6a09;
 }
 .error {
   color: red;
 }
-
 input[type="text"],
 input[type="password"] {
   width: 520px;
@@ -101,79 +70,49 @@ input[type="password"] {
   border: 1px solid #cfc7c7;
 }
 
-input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-@media only screen and (min-device-width: 1380px) and (max-device-width: 1558px) {
+@media only screen and (min-device-width: 1430px) and (max-device-width: 1838px) {
   .image_sign {
-    border-radius: 8px;
-    width: 504px !important;
-    height: 504px !important;
-    flex-shrink: 0;
+    width: 754px !important;
+    height: 704px !important;
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 400px;
+    height: 50px;
+  }
+}
+@media only screen and (min-device-width: 1293px) and (max-device-width: 1430px) {
+  .image_sign {
+    width: 754px !important;
+    height: 704px !important;
   }
   input[type="text"],
   input[type="password"] {
     width: 420px;
     height: 50px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    border: 1px solid #cfc7c7;
-  }
-  .signInForm {
-    margin-bottom: 3vh;
-  }
-}
-@media only screen and (min-device-width: 1028px) and (max-device-width: 1380px) {
-  .image_sign {
-    border-radius: 8px;
-    width: 30rem;
-    height: 504px;
-    flex-shrink: 0;
-  }
-  input[type="text"],
-  input[type="password"] {
-    width: 420px;
-    height: 50px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    border: 1px solid #cfc7c7;
-  }
-  .signInForm {
-    margin-left: -8vh !important;
-  }
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1028px) {
-  .container {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .image_sign {
-    border-radius: 8px;
-    width: 400px !important;
-    height: 404px !important;
-  }
-  input[type="text"],
-  input[type="password"] {
-    width: 300px !important;
-    height: 35px !important;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    border: 1px solid #cfc7c7;
   }
   .signInForm {
     margin-left: -10vh !important;
   }
-  .footer_div {
-    margin-bottom: 0 !important;
+}
+@media only screen and (min-device-width: 1028px) and (max-device-width: 1293px) {
+  .image_sign {
+    width: 80% !important;
+    height: 604px !important;
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 390px !important;
+    height: 45px !important;
+  }
+  .signInForm {
+    margin-left: -12vh !important;
+  }
+  .sign_btn {
+    padding: 10px 20px;
   }
 }
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (min-width: 898px) and (max-width: 1028px) {
   .container {
     flex-direction: column;
     display: flex;
@@ -181,86 +120,69 @@ input[type="checkbox"] {
     align-items: center;
   }
   .image_sign {
-    border-radius: 8px;
-    width: 80%;
-    height: 90%;
-    margin-left: 7vh;
-    margin-top: 5vh;
+    border-radius: 80px 0px 0px 0px;
+    width: 80% !important;
+    height: 604px !important;
   }
   input[type="text"],
   input[type="password"] {
-    width: 370px;
-    height: 50px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    border: 1px solid #cfc7c7;
+    width: 310px !important;
+    height: 45px !important;
   }
   .signInForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
+    margin-left: -13vh !important;
+  }
+  .sign_btn {
+    padding: 10px 20px;
   }
 }
 
-@media screen and (min-width: 368px) and (max-width: 480px) {
+@media screen and (min-width: 568px) and (max-width: 898px) {
   .container {
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .image_sign {
-    border-radius: 8px;
-    width: 80%;
-    height: 90%;
-    margin-left: 5vh;
+  .signInForm {
     margin-top: 5vh;
+    margin-left: -13vh;
+  }
+  .image_sign {
+    border-radius: 80px 0px 0px 0px;
+    width: 80% !important;
+    height: 604px !important;
   }
   input[type="text"],
   input[type="password"] {
-    width: 280px;
-    height: 40px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    border: 1px solid #cfc7c7;
-  }
-  .signInForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
+    width: 310px !important;
+    height: 45px !important;
   }
   .sign_btn {
-    padding: 10px 24px 10px 24px;
+    padding: 10px 20px;
   }
 }
-@media screen and (min-width: 228px) and (max-width: 368px) {
-  .image_sign {
-    border-radius: 8px;
-    width: 90%;
-    height: 100%;
 
+@media screen and (min-width:'268px') and(max-width: 568px) {
+  .container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image_sign {
+    border-radius: 80px 0px 0px 0px;
+    width: 90% !important;
+    height: auto !important;
     margin-top: 5vh;
   }
   input[type="text"],
   input[type="password"] {
-    width: 240px;
-    height: 35px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    border: 1px solid #cfc7c7;
-  }
-  .signInForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
-  }
-  .sign_btn {
-    padding: 10px 24px 10px 24px;
+    width: 260px !important;
+    height: 35px !important;
+  }.sign_btn {
+    padding: 10px 20px;
   }
 }
+

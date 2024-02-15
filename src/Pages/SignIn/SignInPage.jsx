@@ -52,7 +52,7 @@ function SignInPage() {
               <SignInForm />
             </Col>
             <Col md={1}></Col>
-            <Col sm={12} md={4}>
+            <Col sm={12} md={4} className="right-section">
               <Image src={img1} alt="SignIn" className="image_sign" fluid />
             </Col>
           </Row>
@@ -95,7 +95,10 @@ function SignInForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
       </Form.Group>
-      <p style={{ fontFamily: "Urbanist", fontWeight: "bolder" }}>
+      <p
+        className="signIn_label"
+        style={{ fontSize: "20px", fontWeight: "bold", width: "400px" }}
+      >
         NOTE: This is only for admins
       </p>
       <Button className="sign_btn" onClick={handleSignIn}>
