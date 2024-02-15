@@ -185,9 +185,11 @@
   }
 
   .content-overlay {
+    z-index: 0;
     width: 90%; /* Adjust width */
     margin-left: auto;
     margin-right: auto;
+ 
   }
 
   .about {
@@ -224,6 +226,7 @@
   .footer {
     margin-top: 15vh;
   }
+  
 }
 
 @media screen and (max-width: 460px) {
@@ -245,6 +248,7 @@
   .footer {
     margin-top: 18vh;
   }
+ 
 }
 
 @media screen and (min-width: 300px) and (max-width: 400px) {

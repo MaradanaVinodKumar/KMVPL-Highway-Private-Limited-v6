@@ -28,6 +28,7 @@ nav ul {
   padding: 0;
   display: flex;
   gap: 60px;
+
 }
 
 nav ul li {
@@ -134,6 +135,7 @@ nav ul li a.active.GalleryLinkActive::after{
     background-color: #ffffff; /* Add background color for menu */
     width: 100%;
     padding: 10px;
+    z-index: 1;
   }
 
   nav ul.open {

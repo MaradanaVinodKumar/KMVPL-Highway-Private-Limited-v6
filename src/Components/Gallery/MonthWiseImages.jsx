@@ -293,15 +293,17 @@ function MonthWiseImages({ FormatedDate, EditButton = false }) {
         <Modal.Footer>
           <button
             onClick={handleModalPrevious}
-            disabled={selectedImageIndex === 0}
-            style={{ opacity: (selectedImageIndex === 0) && 0.2 }}
+            // disabled={selectedImageIndex === 0}
+            style={{ opacity: (selectedImageIndex === 0) ? 0.2 : 1 }}
+            className="btn btn-primary"
           >
             &#10094; Previous
           </button>
           <button
             onClick={handleModalNext}
-            disabled={selectedImageIndex === (getImagesFromFireBase.length - 1)}
-            style={{ opacity: (selectedImageIndex === (getImagesFromFireBase.length - 1)) && 0.2 }}
+            // disabled={selectedImageIndex === (getImagesFromFireBase.length - 1)}
+            style={{ opacity: (selectedImageIndex === (getImagesFromFireBase.length - 1)) ? 0.2 : 1 }}
+            className="btn btn-primary"
           >
             Next &#10095;
           </button>
