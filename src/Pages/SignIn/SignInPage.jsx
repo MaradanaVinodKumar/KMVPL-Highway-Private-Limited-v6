@@ -46,13 +46,13 @@ function SignInPage() {
     <>
       <Header />
       <AuthProvider>
-        <Container fluid>
-          <Row className="justify-content-center align-items-center">
+        <Container fluid >
+          <Row className="justify-content-center align-items-center container-section">
             <Col sm={12} md={4} className="signInForm">
               <SignInForm />
             </Col>
             <Col md={1}></Col>
-            <Col sm={12} md={4} className="right-section">
+            <Col sm={12} className="right-section">
               <Image src={img1} alt="SignIn" className="image_sign" fluid />
             </Col>
           </Row>

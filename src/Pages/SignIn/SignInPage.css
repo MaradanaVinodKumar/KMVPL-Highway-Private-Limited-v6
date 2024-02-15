@@ -112,7 +112,7 @@ input[type="password"] {
     padding: 10px 20px;
   }
 }
-@media screen and (min-width: 898px) and (max-width: 1028px) {
+@media only screen and (min-width: 898px) and (max-width: 1028px) {
   .container {
     flex-direction: column;
     display: flex;
@@ -121,7 +121,8 @@ input[type="password"] {
   }
   .image_sign {
     border-radius: 80px 0px 0px 0px;
-    width: 80% !important;
+
+    width: 80%;
     height: 604px !important;
   }
   input[type="text"],
@@ -131,58 +132,69 @@ input[type="password"] {
   }
   .signInForm {
     margin-left: -13vh !important;
+ 
   }
   .sign_btn {
     padding: 10px 20px;
   }
+ 
+ 
 }
 
-@media screen and (min-width: 568px) and (max-width: 898px) {
-  .container {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .signInForm {
-    margin-top: 5vh;
-    margin-left: -13vh;
+@media only screen and (min-width: 568px) and (max-width: 898px) {
+  .container-section {
+    display: block !important;
   }
   .image_sign {
-    border-radius: 80px 0px 0px 0px;
-    width: 80% !important;
-    height: 604px !important;
+    padding: 2rem;
+    width: 100%;
+    height: 404px !important;
+    border-radius: 6px !important;
+    
   }
   input[type="text"],
   input[type="password"] {
-    width: 310px !important;
+    width: 390px !important;
     height: 45px !important;
   }
   .sign_btn {
-    padding: 10px 20px;
+    padding: 10px 20px !important;
+    width: 6rem !important;
+  }
+  .signInForm {
+    margin-left: -12vh !important;
+    margin-top: 3rem !important;
+  }
+  .signIn_text{
+    font-size: 20px;
   }
 }
 
-@media screen and (min-width:'268px') and(max-width: 568px) {
-  .container {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media only screen and (min-width: 228px) and (max-width: 568px) {
+  .container-section {
+    display: block !important;
   }
-  
   .image_sign {
-    border-radius: 80px 0px 0px 0px;
-    width: 90% !important;
-    height: auto !important;
-    margin-top: 5vh;
+    padding: 2rem;
+    width: 100%;
+    height: 404px !important;
+    border-radius: 6px !important;
+    
   }
   input[type="text"],
   input[type="password"] {
-    width: 260px !important;
-    height: 35px !important;
-  }.sign_btn {
-    padding: 10px 20px;
+    width: 300px !important;
+    height: 40px !important;
+  }
+  .sign_btn {
+    padding: 10px 20px !important;
+    width: 6rem !important;
+  }
+  .signInForm {
+    margin-left: -12vh !important;
+    margin-top: 3rem !important;
+  }
+  .signIn_text{
+    font-size: 20px;
   }
 }
-
