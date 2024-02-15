@@ -132,7 +132,7 @@ nav ul li a.active.GalleryLinkActive::after{
     position: absolute;
     top: 70px; /* Adjust the top position as needed */
     left: 0;
-    background-color: #ffffff; /* Add background color for menu */
+    background-color: #e9e8e8; /* Add background color for menu */
     width: 100%;
     padding: 10px;
     z-index: 1;
