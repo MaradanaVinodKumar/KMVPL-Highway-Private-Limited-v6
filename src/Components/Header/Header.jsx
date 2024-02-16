@@ -19,7 +19,7 @@ const Header = ({ Color = "balck", Gallery = false, Home = false }) => {
   return (
     <header>
       <div className="logo">
-        <img src={logo} alt="Logo" />
+       <NavLink to='/'><img src={logo} alt="Logo" /></NavLink>
       </div>
       <nav className={isOpen ? "open" : ""}>
         <div className="menu-icon" onClick={toggleMenu}>
